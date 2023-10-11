@@ -13,7 +13,9 @@ document.querySelectorAll("#product-container .btn").forEach(function(btn) {
     btn.addEventListener("click", function(e) {
         e.preventDefault()
         const product_name = e.target.previousElementSibling.previousElementSibling.innerHTML
-        console.log(product_name)
+        dataLayer.push({
+            "event": "click_product_" + product_name
+        })
     })
 
 })
